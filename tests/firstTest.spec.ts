@@ -1,7 +1,7 @@
 import test, { expect } from '@playwright/test';
 
 test.beforeEach('first test', async ({page}) => {
-  await page.goto('http://localhost:4200/');
+  await page.goto(process.env.URL);
   await page.locator("[title='Forms']").click();
   await page.locator("[title='Form Layouts']").click();
 });

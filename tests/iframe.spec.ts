@@ -1,7 +1,8 @@
-import {test, expect} from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../test-options';
 
-test('drag and drop with iframe', async ({page}) => {
-  page.goto('https://www.globalsqa.com/demo-site/draganddrop/');
+test('drag and drop with iframe', async ({page, globalsQAURL}) => {
+  page.goto(globalsQAURL);
   const iframe = page.frameLocator('[rel-title="Photo Manager"] iframe'); // frame locator for iframe
   await iframe.locator('li', {hasText: 'High Tatras 2'}).dragTo(iframe.locator('#trash'));
 

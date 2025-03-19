@@ -8,6 +8,7 @@ export default defineConfig<TestOptions>({
   globalTimeout: 60000,
   retries: 1,
   reporter: [
+    ['html'],
     ['list'],
     ['json', { outputFile: 'test-results/jsonReport.json' }],
     ['allure-playwright'],

@@ -17,6 +17,7 @@ test.describe('form layout page', () => {
     await emailOnGridCard.fill('jose@test.com');
     await emailOnGridCard.clear();
     await emailOnGridCard.pressSequentially('jose2@testing.com', {delay: 100});
+    await expect(emailOnGridCard).toHaveScreenshot();
 
     //generic assertions
     const inputsValue = await emailOnGridCard.inputValue();

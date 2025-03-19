@@ -35,5 +35,13 @@ export default defineConfig<TestOptions>({
         browserName: 'firefox',
       }
     },
+    {
+      name: 'mobile',
+      testMatch: 'testMobile.spec.ts',
+      use: {
+        ...devices['iPhone 15 Pro'],
+        headless: false,
+      }
+    },
   ]
 });

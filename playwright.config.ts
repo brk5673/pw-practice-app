@@ -7,7 +7,11 @@ export default defineConfig<TestOptions>({
   timeout: 40000,
   globalTimeout: 60000,
   retries: 1,
-  reporter: 'html',
+  reporter: [
+    ['list'],
+    ['json', { outputFile: 'test-results/jsonReport.json' }],
+    ['allure-playwright'],
+  ],
   use: {
     baseURL: 'http://localhost:4200/',
     globalsQAURL: 'https://www.globalsqa.com/demo-site/draganddrop/',

@@ -4,8 +4,8 @@ import type { TestOptions } from './test-options';
 require('dotenv').config();
 
 export default defineConfig<TestOptions>({
-  timeout: 40000,
-  globalTimeout: 60000,
+  // timeout: 40000,
+  // globalTimeout: 60000,
   retries: 1,
   reporter: [
     ['html'],
@@ -48,5 +48,10 @@ export default defineConfig<TestOptions>({
         headless: false,
       }
     },
-  ]
+  ],
+
+  webServer: {
+    command: 'npm run start',
+    url: 'http://localhost:4200/',
+  }
 });
